@@ -1,0 +1,352 @@
+\documentclass[AMA,Times1COL]{WileyNJDv5} %STIX1COL,STIX2COL,STIXSMALL
+
+\articletype{RESEARCH ARTICLE}%
+
+\received{Date Month Year}
+\revised{Date Month Year}
+\accepted{Date Month Year}
+\journal{Journal}
+\volume{00}
+\copyyear{2023}
+\startpage{1}
+\documentclass[review]{elsarticle}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno,hyperref}
+\usepackage{gensymb}
+\usepackage{textcomp}
+\usepackage{dirtytalk}
+\usepackage[english]{babel} 
+\raggedbottom
+\usepackage{lineno}
+
+
+\begin{document}
+\begin{linenumbers}
+\title{Synchrony of wind, solar and hydroelectric resources over Argentina and its climatic drivers}
+
+\author[1,2]{Emilio Bianchi}
+
+\author[1]{Tomás Guozden}
+
+\author[3]{Juan Rivera}
+
+\authormark{BIANCHI \textsc{et al.}}
+\titlemark{Synchrony of wind, solar and hydroelectric resources over Argentina and its climatic drivers}
+
+\address[1]{\orgdiv{Centro Interdisciplinario de Telecomunicaciones, Electrónica, Computación Y Ciencia Aplicada (CITECCA)}, \orgname{Universidad Nacional de Río Negro}, \orgaddress{\state{Río Negro}, \country{Argentina}}}
+
+\address[2]{\orgname{Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)}, \country{Argentina}}}
+
+\address[3]{\orgname{Instituto Argentino de Nivología, Glaciologia y Ciencias Ambientales (IANIGLA), CONICET.}, \orgaddress{\state{Mendoza}, \country{Argentina}}}
+
+\corres{Corresponding author Emilio Bianchi, \email{ebianchi@unrn.edu.ar}}
+
+%\presentaddress{This is sample for present address text this is sample for present address text.}
+
+%\fundingInfo{Text}
+%\JELinfo{ejlje}
+
+\abstract[Abstract]{Complementarity of reservoir hydroelectric, solar and wind resources has been explored for different timescales over Argentina using reanalysis-based data and streamflow measurements. Solar and wind resources show positive interannual correlations. Positive correlations were also found between wind speeds and streamflows over southern Patagonia. Climatic drivers exert significant control over wind, solar and hydro resources. The Antarctic Oscillation (AAO) index shows mostly negative relationships with wind speeds. Streamflows over northern Patagonia show also negative relationships with the AAO, and a positive relationship with the Niño index. These relationships are mainly explained by variations in rainfall. Streamflows over southern Patagonia show positive relationships with Southern Blob (SB) and AAO indices driven by variations in temperature and precipitation. The solar resource shows strong links with all ocean-rooted climate indices during winter. Time series of these resources show long term trends of different signs and significances which will require further research.
+}
+
+\keywords{Wind power, Solar power, Hydroelectric power, Climate variability }
+
+\jnlcitation{\cname{%
+\author{Bianchi E.},
+\author{Guozden T}, and
+\author{Rivera J}}.
+\ctitle{Synchrony of wind, solar and reservoir hydroelectric resources over Argentina} \cjournal{\it J Comput Phys.} \cvol{2021;00(00):1--18}.}
+
+
+\maketitle
+
+%\renewcommand\thefootnote{}
+%\footnotetext{\textbf{Abbreviations:} ANA, anti-nuclear antibodies; APC, antigen-presenting cells; IRF, interferon regulatory factor.}
+
+%\renewcommand\thefootnote{\fnsymbol{footnote}}
+%\setcounter{footnote}{1}
+
+\section{Introduction}\label{sec1}
+
+In recent years, power generation by variable renewable energy (VRE) sources (mainly wind and solar) experienced notable growth globally, which will likely continue in the coming decades \cite{ren212020global}. The integration of VRE in the national or regional power mixes implies challenges because of intermittency of these sources \cite{cosseron2013characterization, franccois2014integrating, grams2017balancing} that hinder the optimization of electricity dispatch and results in higher operational costs \cite{albadi2010overview}.
+
+In the time scale of load-following operations, the integration of VRE's often increases the requirements of peak generation \cite{widen2011correlations}, in order to provide ramping services. These requirements are ideally covered with gas-based thermal generation sources or hydroelectricity; the latter option being much cheaper \cite{acker2012integration, peter2017energy}. Over longer temporal frames, an eventual low availability of VRE's can result in a higher requirement of base or semi-base generation \cite{wan1993factors,franccois2017assessing}, which could be based on different power sources such as fossil fuel, nuclear or hydroelectricity. 
+
+Reservoir hydroelectric facilities have the capacity to compensate both high and low frequency fluctuations in VRE's \cite{wan1993factors,franccois2017assessing}. In fact, the combination of hydroelecticity and VRE's to produce a steady power output over regional scales has been recently studied and implemented \cite{chakrabarti2011wind, chakrabarti2012balancing}. For instance Norway, with its approximate 40 GW of hydroelectric capacity, has been called "the blue battery of Europe" \cite{danielo2013norway}; and some authors claim that it could compensate the VRE generation over northern Europe \cite{graabak2017norway}. 
+
+This complementarity between reservoir hydroelectricity and VRE's is due to the fact that 1) reservoirs can store large water volumes, and 2) streamflow variability tends to concentrate over distinct time scales from wind speeds or solar radiation \cite{wan1993factors}. Wind speed variations stand out mainly over the hourly, daily and synoptic time scales, but are relatively more stable over longer (inter annual) time scales. On the other hand, flows from large basins are usually steady and predictable over time scales shorter than a year (depending on the size of the catchment area), but might show considerable inter annual variations \cite{acker2012integration, soberanis2015regarding}. For these reasons, power grids with a high penetration of reservoir hydroelectricity present an additional advantage when dealing with the integration of VRE's \cite{wan1993factors, acker2012integration, gullberg2013political}. The complementarity between hydro resources and wind and/or solar resources has been studied over several regions worldwide. For example, Denault et al. \cite{denault2009complementarity} report on a long-term synchrony between wind and annual runoff in Quebec (Canada), and Henao \cite{henao2020annual} found that solar and wind resources complement hydropower during the dry season in Colombia. In particular, this issue has been extensively studied in Brazil \cite{ricosti2013assessment, schmidt2016optimal}, where some authors reported a significant seasonal complementarity between hydro and wind resources over different regions \cite{do2000wind, silva2016complementarity, cantao2017evaluation}.
+
+Nevertheless, there is one aspect of these climate-dependent sources of electricity generation that can positively or negatively condition this complementarity: the fact that VRE's and hydroelectricity depend on different meteorological variables (wind speeds and radiation in the case of VRE's; precipitation and temperature in the case of hydroelectricity), which present spatial and temporal fluctuations associated with different weather regimes (as defined by Grams et al., for example \cite{grams2017balancing}). Furthermore, the frequency of these weather regimes is often partially determined by the occurrence of large-scale climatic variations such as the El Niño/Southern Oscillation (ENSO) phenomenon \cite{bridgman2014global}. 
+
+There are many studies addressing the complementarity between VRE's and hydroelectricity \cite{rego2016positive, barbosa2017hydro, jurasz2020review, ciria2020multi}. Some of these studies assessed the role of large scale climatic oscillations  \cite{pozo2011impact,gunturu2017asynchrony, franccois2016influence}. As examples, Mohammadi and Goudarzi \cite{mohammadi2018study} found that ENSO is a potential predictor of solar, wind and hydro power in California, Ely et. al \cite{ely2013implications} state that the North Atlantic Oscillation (NAO) would exert an important influence on an eventual complementarity between wind power in the UK and hydro power in Norway, and Renwick et al. and Gunturu et al. \cite{renwick2010effects, gunturu2017asynchrony} showed that correlations between runoff and wind for New Zealand and Australia respectively are related to ENSO variability.
+
+Argentina has appreciable wind and solar resources and a relative high penetration of hydroelectricity \cite{de2007renewable, lu2017global}; about 30\% of electric generation comes from hydroelectric sources \cite{barbosa2017hydro}. Reservoir hydroelectric facilities are mainly located in the basins which drain the Andes in Northwestern Patagonia. There are also important projects under construction in southern Patagonia. These basins are influenced by strong climatic variations and trends which affect both temperature and precipitation patterns and, hence, streamflows \cite{seoane2007assessing, garreaud2009present, gonzalez2010statistical, garreaud2013large}. The main drivers of inter annual variability over the region are the Antarctic Oscillation (AAO) and the ENSO \cite{garreaud2009present, garreaud2009andes}. 
+
+There are also reports of decadal trends which are related to both long-term anthropogenic and natural forcings. For instance Northern Patagonia has already been experiencing frequent droughts during the last decade \cite{garreaud2020central, aguayo2021hydrological} that contributed to overall negative trends in streamflows \cite{pasquini2007discharge, rivera2018regional, rivera2018spatio}. These negative trends in streamflows over northern Patagonia seem to be associated with a positive trend in the AAO index \cite{garreaud2018record, rivera2018regional}, which implies reductions in precipitation over northwestern Patagonia, and increases in temperatures all over Patagonia \cite{silvestri2003antarctic, garreaud2009present}. Pasquini and Depetris \cite{pasquini2007discharge} attributed the positive trend in streamflows observed Santa Cruz river in southern Patagonia to variations in regional temperatures, since the Santa Cruz has a purely snow-melt regime. The trend towards the positive phase of the AAO is, in turn, forced by stratospheric ozone depletion and increased greenhouse gas concentrations \cite{arblaster2006contributions, mindlin2020storyline,villamayor2021causes}. In this sense, several authors have already warned about future reductions in precipitation the incoming decades which will certainly affect the availability of hydroelectric resources \cite{vera2006climate, nunez2009regional,natalia2020climate, nadal2017planificacion}.
+
+The objective of this study is to provide a thorough characterization of the interannual-to-´decadal variability of solar, wind and hydro resources over Argentina; and to bring insights about the role of large-scale climatic patterns in shaping the joint availability of these resources.
+
+\section{Methodology}
+
+In this study, we focused on three basins selected upon their hydroelectric capacity and potential: two of them (Neuquén and Limay rivers) are located in northern Patagonia and are tributaries of the Negro river (right pannel of Fig.~\ref{location}). These rivers present a mixed rainfall–snow melt regime, with a peak during autumn (rainfall) and spring (snow-melt). The minimum streamflows occur at the end of summer, which is the dry season \cite{rivera2018regional} (see Fig.~\ref{variables}). The approximate installed capacity over these basins total 4595 MW, and there are projects for the installation of additional 1400 MW. We also included in the analysis the Santa Cruz river, which is located in southern Patagonia (left pannel of Fig.~\ref{location}), in which there are two facilities under construction totaling 1320 MW. This river has a snow-melt regime, with a peak at the end of summer and minimum values at the end of winter \cite{pasquini2011southern}. As mentioned above, streamflows in the northern patagonian rivers show relatively large inter-annual variations; and the main sources of low-frequency variability are associated with the ENSO and AAO \cite{araneo2008atmospheric,gonzalez2010statistical,berri2019nino, romero2020forecasting}. Streamflows in the Santa Cruz river, on the other hand, show a much more stable annual cycle, and a relatively lower interannual variability (see Fig.~\ref{variables}). Table \ref{rios} shows the main characteristics of the selected basins. 
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=130mm]{fig1.png}
+	\caption{\label{location} $Left$: location of solar facilities (orange circles), wind facilities (blue circles) and the basins of the Limay and Neuquén rivers (northern Patagonia), and Santa Cruz river (Southern Patagonia). The size of the circles is proportional to the installed capacity. Black triangles indicate the location of stream measurement gauges. $Right$: location of reservoir hydroelectric facilities in the Comahue region (Neuquén and Limay basins). This is a subplot of the left panel, indicated by the black frame.}
+\end{figure}
+
+\begin{table}[hbpt]
+	\caption{Main characteristics of patagonian drainage basins. * corresponds to projected hydroelectric capacity}
+	\label{rios}
+	\begin{center}
+		\begin{tabular}{ m{5em}m{6em}m{6em}m{6em} }
+			\hline
+			River & Drainage basin (km$^2$) & Discharge (m$^3$/s) & Capacity (MW)	\\
+			\hline
+			\textit{Neuquén}  &    50.770 & 283 & 472 (1400*)   \\
+			\textit{Limay}     &    63.700 & 237 & 4.123   \\
+			\textit{Santa Cruz}   &    24.000 & 736 & 1.320*      \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Current operational wind and solar facilities present a wide geographical distribution; they are located where the resources are more abundant: wind sites concentrate over Patagonia and central Argentina, while solar sites are located over the northwest (left pannel of Fig.~\ref{location}). Currently, there is a total of 56 wind and 30 solar operational facilities, which total 3292 MW and 1076 MW of installed capacity respectively (https://cammesaweb.cammesa.com/potencia-instalada/). As with the streamflows, wind and solar resources also show inter annual variations which, in turn, respond to remote climatic drivers. Wind speeds presents important inter-annual variations and a weak annual cycle (Figs. ~\ref{variables} and ~\ref{series}). According to previous studies, its inter-annual variations mostly respond to atmospheric mass variations which are part of an hemispheric pattern over mid to high latitudes (the AAO) \cite{bianchi2017large, bianchi2022assessing}. Solar radiation shows much small inter-annual variations, which seem to be connected to latitudinal fluxes of moisture through the subtropics forced by oceanic drivers both in the Pacific and Atlantic basins \cite{bianchi2022assessing}.
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[clip,width=130mm]{fig2.png}
+	\caption{\label{variables} Time series of monthly wind speeds averaged at all wind sites (a), solar radiation averaged at all solar sites (b), and streamflows of the Neuquén, Limay and Santa Cruz Rivers (c, d and e). Vertical black discontinuous line indicates the year 2016. The upper panel in each subplot shows yearly mean values. Right panel in each subplot shows monthly mean values.}
+\end{figure}
+
+\subsection{Data and analysis}
+
+Monthly fields of surface incoming shortwave flux (variable SWGDN from the M2T1NXRAD data collection) and wind speed at 50 meter height (U50M,V50M from the M2T1NXSLV data collection) were retrieved from MERRA2 reanalysis \cite{gelaro2017modern} covering the period 1980-2017. This reanalysis provides gridded data with a spatial horizontal resolution of 0.5° latitude x 0.375° longitude and 72 vertical hybrid-eta levels plus 42 interpolated standard pressure levels and fixed heights (including wind speeds at 50 meters) \cite{bosilovich2015merra, gelaro2017modern}. From this data, the time series of these resources over the 56 wind and 30 solar sites were constructed using the closest MERRA2 grid point to each site. Given the geographical proximity of some sites, the resultant number of grid points was reduced to 26 and 18 respectively. We used monthly streamflow data for the Neuquén, Limay and Santa Cruz rivers covering the period 1980-2017 provided by the regional basin authority (http://www.aic.gov.ar/sitio/home) and the national hidrological resources office (https://snih.hidricosargentina.gob.ar/). These institutions produce high quality monthly flow measurements using traditional stream gauges and acoustic doppler velocity meters following the World Meteorological Orgatization guidlines (http://www.aic.gov.ar/sitio/publicaciones-todas). Streamflow measurement gauges are located upstream of the hydro power facilities and are not affected by their operation.
+
+Solar time series were averaged into one time series since its temporal behavior is relatively homogeneous. Wind time series, instead, show very distinct temporal variations according to their location (see \cite{bianchi2019spatiotemporal}). These time series were clustered into 9 groups using Lund´s classification method (\cite{lund1963map}) with a correlation threshold of .8 (see fig ~\ref{series}).
+
+The occurrence of recent hydrological droughts \cite{aguayo2021hydrological}, and shortages in the wind and solar resources (not reported) has raised concerns about their frequency. To address this question, we constructed an index (called Availability Index) by adding -1/+1 whenever the monthly time series of aggregated solar and wind resources and individual streamflows during the 1980-2017 period show values below/above the 10th/90th percentile of the distribution. For the construction of this index we used the aggregated wind speed time series because we intend to assess the effect of generalized variations of the wind resource on  the national power system. The selected threshold percentiles are regularly used in the renewable energy sector to account for infrequent events \cite{dobos2012p50, pryor2018interannual, aytac2024environmental}.
+
+Wind, solar and hydro resources were compared between themselves and with several climate indices at the interannual time frame for different seasons. For this comparisons, Spearman´s rank correlation coefficient between time series of streamflows, wind and solar resources and six climate indices were computed for all seasons. This correlation coefficient allows the evaluation of the significance of monotonic relationships between time series, regardless wether that relationships are linear or non-linear \cite{zar2014spearman}. We chose the Southern Oscillation Index (SOI, \cite{ropelewski1987extension}), the Niño 3.4 index (\cite{rayner2003global}) and the Pacific Decadal Oscillation (PDO, \cite{mantua1997pacific}) index to include the atmospheric and oceanic variability over the Pacifc Ocean.  We also included an index of the oceanic variability in the Tropical Atlantic Ocean (the Tropical South-Atlantic TSA, \cite{enfield1999ubiquitous}), the Antarctic Oscillation index (AAO, \cite{mo2000relationships}), and the Southern Blob (SB), an index which characterizes the variability in SST in a region of the south-west Pacific that, according to Garreaud et.al (\cite{garreaud2021south}), is related to recent climatic anomalies over southern South America. Correlations between wind, solar and hydro time series were analyzed for summer and winter trimesters respectively, which is when the peak power demand occurs. For this purpose, three-month averages of the wind and solar time series, as well as the time series of the Santa Cruz river, were computed. For the time series of the Limay and Neuquén rivers, instead, six-month averages were calculated in order to include the winter recharge.
+
+In order to provide a geographical scheme of the co-variability between the different resources and climate indices and gain insight of the physical mechanisms behind these relationships, we retrieved monthly fields from the NCEP-NCAR reanalysis \cite{kalnay2018ncep}: 925 mb and 250 mb geopotential height, Outgoing Longwave Radiation (OLR), Surface Air Temperature (SAT), rainfall from the Global Precipitation Climatology Project (GPCP, \cite{adler2003version}); and Sea Surface Temperatures (SST) from the NOAA Extended Reconstructed SST V5 dataset (\cite{huang2017noaa}). 925 mb heights and OLR were used as proxies for pressure gradient force (and hence wind speeds) \cite{alonzo2020probabilistic} and cloudiness \cite{nyakwada1991relationships}, rainfall and SAT are directly proportional to streamflows in northern Patagonia and southern Patagonia (due to the rainfall-snowmelt and snow-melt-regimes, \cite{seoane2007assessing, pasquini2011southern}) respectively. Regression fields between monthly absolute values of wind speeds averaged at wind sites (see figure ~\ref{location}) and 925 mb geopotential height, Outgoing Longwave Radiation (OLR), rainfall and SAT were computed. The aim is to explore 1) wether wind variations are homogeneous throughout the territory (regression with geopotential heights), 2) cloudiness patterns associated with wind speed variations (regression with OLR) and 3) how do wind speed variations link to with drivers of streamflows (rainfall and SAT). Regressions fields between the different climate indices (SOI, Niño 3.4, PDO, TSA, AAO and SB) and 925 mb geopotential height, Outgoing Longwave Radiation (OLR), rainfall and SAT were computed in the same fashion in order to provide a geographical description of the impact of climate drivers on key meteorological variables. Elevations above 1500 meters above sea level were masked in these regression fields using the ASTER digital elevation model \cite{abrams2010aster} in order to exclude systematic biases from the different reanalysis datasets \cite{gao2012elevation, birkel2022evaluation}.
+
+Finally, we analyzed long term variations and trends in wind, solar and hydro time series. Three homogeneity tests were implemented to detect breaks in the mean values of the time series: i) the Standard Normal Homogeneity Test (SNHT), ii) the Buishand Range Test, and iii) the Pettitt Test \cite{ahmad2013homogeneity, bickici2019homogeneity}. The significance of long-term trends in the time series of wind, solar and hydro resources was assessed by applying the non-parametric Mann-Kendall trend test \cite{mcleod2005kendall}. Break points and trends were detected with 99\% and 99.5\% confidence levels, respectively.
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[clip,width=130mm]{fig3.png}
+	\caption{\label{series} $Left$: location of different groups of wind sites classified using a correlation matrix. $Right$: averaged time series of percentual wind speed variations for each group}
+\end{figure}
+
+\section{Results}
+
+\subsection{Seasonal/interannual variations}
+
+Joint availability of hydro, wind and solar resources is summarized through the Availability Index in figure ~\ref{cases}. Although the occurrence of extreme events (three or more simultaneous anomalies of the same sign) is not frequent, the time series of this index shows significant intra and inter annual variations. We will begin by examining the role of co-variability of individual resources and large-scale climatic drivers in these overall seasonal to inter annual variations.
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=130mm]{fig4.png}
+	\caption{\label{cases} Time series of the Availability Index (left), along with its histogram (right). This index is constructed by adding +1 whenever each time series is above the 90th percentile; and by adding -1 whenever each time series is below the 10th percentile. Using the three hydro resource time series plus solar and wind the index can take integers between -5 and +5.}. 
+\end{figure}
+
+Seasonal correlations between different resources show overall positive relationships between all wind groups and solar radiation for both summer and winter (figure ~\ref{matriz1}). Regression maps between wind speeds averaged at all sites and 925 mb geopotential height and OLR show that high wind speeds are associated with strong westerlies over the southern portion of the country (evidenced as a minimum of geopotential height over the Drake passage, and strong geopotential gradients over Patagonia). This configuration also matches with low cloudiness (high OLR values) over the northwestern Argentina (see figure ~\ref{reg1})                                    
+
+\begin{figure*}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=130mm]{fig6.png}
+	\caption{\label{matriz1} Correlation matrices between seasonally averaged wind speeds, solar radiation, and streamflows. Statistically significant correlations at the 90\% confidence level are indicated by their numerical values.}
+\end{figure*}
+
+We also found positive relationships between wind speeds at almost all wind groups, and the streamflows of the Santa Cruz river during the winter season. The regression map between wind speeds averaged at all sites and 925 mb geopotential height and SAT/rainfall (figure ~\ref{reg1}) shows the coincidence of strong westerlies and higher temperatures over southern Patagonia and higher precipitation over the southern Andes. These high temperatures are likely the consecuence of Foehn effect driven by strong winds and result in higher snow-melt rates (\cite{bozkurt2018foehn}). There are also weak negative relationships between wind sites located in central Argentina (groups 1 to 5) and Neuquén streamflows during summer.
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[clip,width=140mm]{fig7.png}
+	
+	\caption{\label{reg1} 925 mb geopotential  height (black contours, [m]), SAT (left column, [$\degree$C]), rainfall (middle column, [mm]) and OLR (right column, [W/m$^2$]) regressed upon wind speeds [m/s] averaged at all sites during winter (top row) and summer (bottom row) seasons. Blue and yellow dots indicate the locations of wind and solar sites respectively. The black triangle indicates the location of the streamflow measurement gauge in the Santa Cruz River. Elevations above 1500 m.a.s.l. are masked}
+		
+\end{figure}
+
+Wind, solar and hydro resources show seasonally varying relationships with the different climate indices (figure ~\ref{matriz2}). The AAO, as reported in previous works (\cite{bianchi2022assessing}), shows overall negative correlations with the wind resource, specially during winter and spring. In line with this, the AAO index shows a positive relationship with geopotential heights. Wind speeds show mostly weak and non-significant correlations with ocean-rooted climate indices. The exceptions are the SOI, which shows negative correlations with groups 3 and 5 (located in eastern Argentina) during fall; and the SB, which shows positive correlations with most wind groups during winter. Northern patagonian streamflows (Neuquén and Limay) show positive (negative) correlations with the Niño 3.4 index (SOI), mainly during  winter and spring. They also show negative correlations with the AAO index during summer. These relationships are explained by variations in rainfall: the SOI is inversely related to precipitation over northwestern Patagonia during winter and spring, and the same applies for the AAO during summer (figure ~\ref{reg2}). Both SB and AAO show positive relationships with the streamflows of the Santa Cruz river during all seasons, but more significant during winter and spring respectively. All these relationships seem to be due to positive relationships between these climate indices and SAT/precipitation over Southern Patagonia (figure ~\ref{reg2}). Both TSA and SB show negative correlations (although weak in most cases) with the streamflows of northern patagonian basins. In the case of the SB, this relationship might respond to negative relationships between this index and both precipitation SAT over Northern Patagonia (figure ~\ref{reg2})
+
+\begin{figure*}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=130mm]{fig8.png}
+	\caption{\label{matriz2} Correlation matrices between three-monthy (seasonal) mean climate indices and solar, wind and hydro time series.}
+\end{figure*}
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[angle=90, width=0.6\textwidth]{fig9.png} % Rotar la imagen 90 grados
+	\caption{\label{reg2} 925 mb geopotential height anomalies (contours: red contours indicate positive geopotential anomalies, blue contours indicate negative geopotential anomalies), precipitation (left pannels) and SAT (right pannels) regressed upon AAO, SOI, SB and PDO indices during all seasons. Blue dots indicate the location of wind sites. Black triangles indicate the location of streamflow measurement gauges. Elevations above 1500 m.a.s.l. are masked.}
+\end{figure}
+
+Solar radiation averaged over all solar sites show strong correlations with all ocean-rooted climate indices during winter. The selected climate indices capture the sensitivity of solar radiation to SSTs over Northwestern Argentina, which is stronger over the western and central tropical Pacific and the tropical Atlantic regions (figure ~\ref{sst}). SOI, SB and TSA indices are positively related to OLR (figure ~\ref{reg3}); this means that they are negatively related to cloud cover/frequency. PDO, instead, is negatively related to OLR. 
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[clip,width=110mm]{fig10.png}
+	\caption{\label{sst} Map of correlations between solar radiation averaged at all sites and SST (color shading), and 250 mb geopotential height anomalies regressed upon  solar radiation averaged at all sites and (red contours indicate positive geopotential height anomalies, red contours indicate positive geopotential height anomalies). Yellow dots indicate the location of wind and solar sites.}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=140mm]{fig11.png}
+	\caption{\label{reg3} 925 mb geopotential heights (contours: red contours indicate positive geopotential values, blue contours indicate negative geopotential values) and OLR  (grey shading) regressed upon AAO, SOI, SB and PDO indices during. Yellow dots indicate the location of solar sites. Elevations above 1500 m.a.s.l. are masked.}
+\end{figure}
+
+\subsection{Long term variations and trends}
+
+Wind, solar and hydro resources show different trends over the 1980-2017 period. Only one wind site over northern Argentina show a decreasing trend (group 1) during autumn (table ~\ref{trendw}). Wind groups 5, 6 and 7, located in eastern Patagonia, show positive trends during spring, fall and winter, and fall respectively. Another wind site (group 8), in northwestern Patagonia, show a decreasing trend during summer. Solar radiation showed positive trends during winter and spring. Streamflows in the Neuquén river show significant decreasing trends during summer, fall and spring. Limay river, instead, did not show a significant trend. Finally, the Santa Cruz river shows significant positive trends during fall and winter. 
+
+\begin{table}[hbpt]
+	\caption{Annual and seasonal Theil-Sen´s slopes in wind speeds for the 8 wind groups, the Neuquén, Limay and Santa Cruz rivers, and solar radiation averaged at all solar sites. Significant trends are indicated by an asterisk}
+	\label{trendw}
+	\begin{tabular}{l|ccccc}
+		
+		& anuual & summer & fall & winter & spring \\
+		\hline
+		
+		group 1  &  -0.0024  &  -0.0047  &  \textbf{-0.0038*} &  -0.0024  &  -0.0010 \\
+		group 2  &  -0.0026  &  -0.0012  &  -0.0044  &  -0.0040  &  +0.0017  \\
+		group 3  &  +0.0003  &  -0.0072  &  +0.0017   &  +0.0026  &  +0.0043  \\
+		group 4  &  +0.0010  &  -0.0058  &  +0.0039  &  +0.0006  &  +0.0013	  \\
+		group 5  &  +0.0033  &  -0.0029  &  +0.0064  &  +0.0106  &  \textbf{+0.0141*}  \\
+		group 6  &  +0.0067  &  +0.0002  &  \textbf{+0.0117*}  &  \textbf{+0.0118*}  &  +0.0020  \\
+		group 7  &  +0.0093  &  -0.0070  &  \textbf{+0.0232*}  &  +0.0124  &  +0.0107 \\
+		group 8  &  \textbf{-0.0076*} &  \textbf{-0.0151*} &  -0.0063  &  0.0005  &  -0.0095   \\
+		radiation  &  \textbf{+0.1308*} &  +0.1158 &  -0.0273  &  \textbf{+0.2292*}  & \textbf{+0.2689*}  \\
+		Neuquén  &  \textbf{-4.0373*}  &  \textbf{-1.5347*}  &  \textbf{-4.2306*}  &  -1.6704  & \textbf{-5.8048*}   \\
+		Limay  &  -1.2289  & -0.6092  &  -1.7448  &  -1.6035  &  -0.1242  \\
+		S. Cruz  &  \textbf{+3.1509*}  &  +0.7857 &  \textbf{+5.0476*} & \textbf{+5.3269*}  &  +1.3300   \\
+		
+		
+	\end{tabular}
+\end{table}
+
+In addition, three breaks in long-term mean values were detected with the homogeneity tests described in the methodology section. All of the tests report a break in the time series of wind sites 6 and 7 between february and september of 2002 (upper row in figure ~\ref{salto}). Mean values shifted from 8.08 m/s and 8.45 m/s to 8.29 m/s and 9.12 m/s respectively. Streamflows in the Neuquén river also show a break in the mean values between december 2006 and december 2009. Mean values shifted from 314 m$^3$/s to 183 m$^3$/s
+
+\begin{figure}[hbpt]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[clip,width=130mm]{fig12.png}
+	\caption{\label{salto} Top panels: 12-month running averages of wind speeds for wind groups 6 and 7 and streamflows in the Neuquén river (blue lines). Bottom panels: 12-month running averages of SB, PDO and AAO indices (blue lines).
+	Black lines show mean values before and after the detected breaks. The red line shows the linear trend for the period 2002-2017.}
+\end{figure}
+
+\subsection{Fall/winter of 2016: a case study}
+
+We will end this section by describing a particular event which illustrates the role of both internal atmospheric variability and climatic signals in determining the availability and synchrony of renewable energy resources. Looking at figure ~\ref{cases}, it becomes clear that the year 2016 configured a notable exception. During this year, the index was negative during most of the year, especially from june to august. This meant a persistent deficit in the availability of wind, solar and hydro resources. This feature can also be observed in figure ~\ref{variables}.
+
+Both averaged wind speeds and solar radiation were below the interquartile range from april to july (not shown), and experienced a slight recovery in august. Northern Patagonian streamflows were also below the averages, especially during june and july. Streamflows in the Santa Cruz river, on the contrary, were above the averages during april, and then close to the average from may to august.
+
+Circulation anomalies during those months are depicted in figure ~\ref{2016}. An alternating pattern of anomalies of differing sign in geopotential heights starting in the western subtropical Pacific and ending in southern Patagonia can be observed at both high (figure ~\ref{2016} a)) and low levels of the atmosphere (figures ~\ref{2016} b) to e)). This resulted in positive pressure anomalies over southern Patagonia also described in \cite{garreaud2018record}. This pattern was associated not only with reductions in precipitation (figure ~\ref{2016} d)), but also with reductions in surface wind speeds (figure ~\ref{2016} b)), negative SAT anomalies over central Argentina and positive SAT anomalies over southern Patagonia (figure ~\ref{2016} c)), and also to increases in cloudiness/reductions in surface incoming radiation over northwestern Argentina (seen as negative anomalies in OLR, figure ~\ref{2016} e)). The fact that streamflows in the Santa Cruz river are the only resource that did not experienced decreases during this period are a consequence of the positive SAT anomalies since this river has a purely snow-melt regime.
+
+
+\begin{figure*}[hbpt]
+	\centering
+	\hspace*{-1cm}   
+	\includegraphics[clip,width=160mm]{fig5.png}
+	\caption{\label{2016} 
+		%	Composite 
+		Anomalies of a) SSTs (color shading) + 250 mb. geopotential heights (contours), b) surface wind speeds (color shading) + 925 mb. geopotential heights (contours), c) SAT (color shading) + 925 mb. geopotential heights (contours), d) rainfall (color shading) + 925 mb. geopotential heights (contours), and e) OLR (shading) + 925 mb. geopotential heights (contours) for april-august 2016. Elevations above 1500 m.a.s.l. are masked.}
+\end{figure*}
+
+\section{Discussion}
+
+During the year 2016 a particular climatic event caused important and simultaneous losses in wind, solar and hydro resources over southern South America which lasted several months. The unusual circulation anomalies were likely caused by a combination of a tropical oceanic forcing over the western Pacific Ocean, and the positive phase of the AAO \cite{garreaud2018record,vera2018activity}. This motivated the question about the frequency of these joint events, and about the physical mechanisms behind the variability of these resources. This study aimed at answering these questions over interannual and decadal timescales for a 38-year period using reanalysis-derived wind speed and radiation data over several wind and solar sites along with streamflow measurements at three basins. 
+
+A detailed analysis reveals that the event of simultaneous losses in wind, solar and streamflows during 2016 was unprecedented over the analyzed period. During those months (april to june 2016), positive values in the AAO prevailed, while the conditions in the tropical Pacific shifted from El Niño to La Niña. The preceding Niño event (El Niño 2015-2016) was one of the strongest events on record, but its impacts were altered by the co-occurrence of a strong AAO positive phase, which dominated the circulation over southern South America \cite{vera2018activity}. This unusual circulation scheme caused negative precipitation anomalies in southeastern South America and western Patagonia \cite{vera2018activity, garreaud2018record}. According to Garreaud \cite{garreaud2018record}, the persistent positive AAO values during summer and fall of 2016 responded to both anthropogenic climate change and internal variability of the atmosphere. Besides this particular event, climate variations determine the availability and potential complementarity of these resources over time \cite{gonzalez2022making}.
+
+\subsection{Seasonal/interannual variations}
+
+Seasonal correlations between wind, radiation and streamflow time series show overall positive relationships between all wind groups and solar radiation for both summer and winter. This low complementarity between wind and solar resources was already discussed in \cite{bianchi2022assessing}, although in that study wind speeds were averaged over all existing wind sites. High (low) winds speeds tend to coincide with increments (reductions) in cloudiness over north-western Argentina, where most solar facilities exist. We also found positive relationships between wind speeds at most wind groups and the streamflows of the Santa Cruz river during the winter. Strong westerlies over southernmost Argentina during this season are associated with positive SAT and precipitation anomalies over southern Patagonia/southern Andes (figure ~\ref{reg2}). Carrasco-Escaff et al. (2022, \cite{carrasco2022climatic}) analyzed annual surface mass balance variations of the Patagonian icefields. They found that positive annual accumulations are associated with increases in annual and winter precipitation and lower summer temperatures (meaning lower summer ablation). The lack of specific knowledge about the relationship between annual accumulations over the Patagonian icefield and seasonal streamflows in the Santa Cruz river hinders the comparison of these results. 
+
+Wind, solar and hydro resources show seasonally varying interannual relationships with the different climate indices. A previous study (\cite{bianchi2022assessing}) found negative simultaneous relationships between wind speeds averaged at various sites over Argentina and the AAO index during spring and summer. In the present study, these relationships were analyzed separately for different regions (figure ~\ref{series}). Results show overall negative relationships with almost all wind regions during all seasons. The statistical significances of these relationships are variable between seasons but tend to be higher over northern Patagonia/central Argentina. This is in line with the results in \cite{bianchi2017large}. Correlations between wind speeds and ocean-rooted climate indices tend to be weak and non-significant, with the exceptions the SOI, which shows negative correlations during fall; and the SB, which shows positive correlations during winter over sites located in eastern Argentina. Streamflows over northern Patagonia (Neuquén and Limay basins) show a positive (negative) relationship with the Niño 3.4 index (SOI), mainly during winter and spring. They also show a negative relationship with the AAO index during summer. These relationships are mainly explained by variations in rainfall: both SOI and AAO indices are inversely related to precipitation over northwestern Patagonia. These relationships between ENSO and AAO indices and streamflows over northern Patagonia, as well as the physical mechanisms behind them have been already extensively documented in previous studies (e.g \cite{gonzalez2010statistical, masiokas2006snowpack, lauro2019streamflow, camposenso}). Both TSA and SB indices show weak negative correlations with the streamflows of northern patagonian basins. In the case of the SB, this relationship might respond to negative correlations between this index and both precipitation and SAT over Northern Patagonia (figure ~\ref{reg2}). This index represents the variability in the SSTs over a region in the subtropical southwest Pacific (SSWP); which, according to Garreaud et al. (2021) \cite{garreaud2021south}, it is an important driver of climate variability over southwestern South America. But, as it will be discussed ahead, it might be linked to decadal trends rather than= interannual variations. Streamflows in southern Patagonia show positive relationships with SB and AAO indices mainly during winter and spring, respectively. These relationships may be due to positive correlations between these indices and SAT/precipitation over the region. Lauro et al. \cite{lauro2019streamflow} also reported a positive relationship between spring streamflows of the Santa Cruz river and the AAO. They also reported positive relationships with PDO and Niño 3.4 indices during summer and fall. We did not find these signals, and this may be due to the different periods under analysis (they considered the period 1955-2011). Carrasco-Escaff et al. \cite{carrasco2022climatic} reported low dependence of the surface mass balance of southern patagonian icefields on both El Niño–Southern Oscillation and AAO modes. Although, as mentioned before, insights about links between mass balance over the icefields and the Santa Cruz streamflows would be necessary to derive relevant conclusions. 
+
+We found strong links between the solar resource and ocean-rooted climate indices, particularly during winter. This is in line with the findings of Liu et al. 2022 (\cite{liu2022opposing}), who posit that global cloud coverage variations are mostly controlled by ENSO. These relationships are positive for TSA and SB indices, and negative for Niño 3.4 and PDO. In \cite{bianchi2022assessing} we reported similar results: positive correlations with TSA and Atlantic Multidecadal Oscillation (AMO) during winter and spring; and negative correlations with Multivariate ENSO Index (MEI) during winter.
+According to that study, extreme positive and negative anomalies of solar radiation averaged at solar sites are associated to both SST and 250 hpa. ENSO-like patterns; and also to northerly and southerly anomalies of Vertically Integrated Flux of Water Vapor. Liu et al. 2022 (\cite{liu2022opposing}) reported a tendency in cloud coverage to increase during El Niño years and to decrease during La Niña years over southern South America. The mechanisms linking oceanic forcings with changes in vapor flux or cloudiness over the region are not entirely understood. Several authors posit that tropical forcings both in the Atlantic and Pacific basins modulate the intensity of the South American Low Level Jet (SALLJ) and, hence, the latitudinal flux of vapor over southeastern South America \cite{chiessi2009possible, seager2010tropical, jones2018influence, montini2019south, cai2020climate}.
+
+\subsection{Long term variations and trends}
+
+Decadal trends and shifts in mean values were also analyzed in his study. In the case of wind speeds we found decreasing trends at wind sites over northern Argentina and northwestern Patagonia during fall and summer respectively. Wind over eastern Patagonia, showed positive trends during spring, fall and winter, and fall respectively. The homogeneity tests detected increases in the mean values of wind speeds over eastern Patagonia around the year 2002. Merino and Gassman \cite{merino2022wind} analyzed wind speed trends over Argentina using data from surface observations. They found significant annual and seasonal declines for most stations. Although these results do not match our findings, it should be considered that they used a different period (1990 to 2020), and that the areas with the highest concentration of wind sites (central-eastern Argentina) are not represented by these measurements.
+
+Several authors have studied long term variations in wind speeds and its physical drivers on global, continental and regional scales. These long-term global variations in near surface wind speeds seem to respond to global shifts in atmospheric circulation features (intensity and position of westerly winds and Hadley cells) forced both by greenhouse gas increases and large-scale atmosphere-ocean variability, such as the PDO or the NAO \cite{zeng2019reversal,deng2021global,zhou2021continuous}. Nevertheless, when shifting the analysis from global to continental or regional scales, neither the observed trends nor its physical drivers are homogeneous. For example, deng et al. (\cite{deng2021global}) reported that wind speed over southern hemisphere land showed trends that were opposite to global and northern hemisphere trends. They were positive during 1980–2010 and became slightly negative during 2010–19. In any case, continental or regional low-frequency variability of near surface wind speeds cannot be attributed to just a single atmospheric circulation pattern, but rather to a combination of various climatic patterns \cite{naizghi2017teleconnections, zeng2019reversal, shen2021centennial, utrabo2022wind}. We analyzed annual and seasonal trends of the climate indices for sake of comparison (table ~\ref{trend_i}). The overall positive trend in the AAO index does not seem to be associated to consequent reductions in wind speeds, with the exception of a wind site in northwestern Patagonia, which shows a significant negative trend during summer. Positive trends in sites located in eastern Patagonia might respond to trends in the oceanic indices SB, PDO and TSA. Furthermore, we identified the turning points in the climate indices to determine how they align with the turning points of regional wind speeds that occur in 2002 (lower row in figure ~\ref{salto}). SB and PDO indices show significant breaks during 1997 and 1995 respectively. Describing the physical mechanisms behind these relationships will require further research \cite{zeng2019reversal}. Nevertheeless, several authors have already established relationships between ocean-rooted climate indices and long-term variations in wind speeds. As stated before, the PDO seems to drive changes in wind speeds across the whole mid-latitudes \cite{lledo2018investigating, zeng2019reversal}. Other indices, such as the Western Hemisphere Warm Pool (WHWP) and the Eastern Atlantic indices seem to drive changes in wind speed range over global and regional scales respectively \cite{zhou2021continuous}. One important caveat should be considered regarding these results however. The informed long-term variations in wind speeds are based in reanalysis data, which are extensively used to characterize wind speed variability worldwide, but do not always provide a correct representation of long-term variations and trends \cite{wohland2019inconsistent,merino2022wind}.
+
+\begin{table}[hbpt]
+	\caption{Annual and seasonal Theil-Sen´s slopes in wind speeds for the different climate indices: PDO, SOI, Niño3.4, AAO, TSA, SB. Significant trends are indicated by an asterisk}
+	\label{trend_i}
+	\begin{tabular}{l|ccccc}
+		
+		& anuual & summer & fall & winter & spring \\
+		\hline
+		
+		PDO &  \textbf{-0.045*}  &  \textbf{-0.03*}  & -0.026 &  \textbf{-0.043*}  &  \textbf{-0.041*} \\
+		SOI &  +0.019  &  +0.02  &  +0.013  &  +0.017  &  +0.024  \\
+		Niño3.4 &  0  &  -0.005  &  +0.025   &  0  &  -0.0029  \\
+		AAO &  +0.011  &  \textbf{+0.026*}  &   \textbf{+0.027*}  &  +0.0097  &  +0.0028	  \\
+		TSA &  \textbf{+0.08*}  &  \textbf{+0.09*}  &  \textbf{+0.01*}  &  +0.0058  &  +0.0057  \\
+		SB &  \textbf{+0.03*}  & \textbf{+0.029*}  &  \textbf{+0.044*}  &  \textbf{+0.034*}  &  \textbf{+0.02*}  \\
+		
+	\end{tabular}
+\end{table}
+
+
+Solar radiation shows positive trends annually, and during winter and spring (table ~\ref{trendw}). This might be connected to observed significant trends in ocean-rooted climate indices such as PDO and SB (table ~\ref{trend_i}) that produce subsequent variations in moisture flux and cloudiness over southern South America \cite{seager2010tropical, montini2019south}. But, again, establishing these mechanisms will require  further research.
+
+Finally, streamflows showed opposing trends between northern and southern Patagonia. Neuquén river showed significant negative trends annually and during summer, fall and spring (table ~\ref{trendw}). Furthermore, it also shows a steep reduction in its mean annual streamflow between 2006 and 2009. Limay river showed also negative trends during all seasons but non-significant. The Santa Cruz river, located in southern Patagonia, showed significant positive trends at the annual scale, and during fall and winter. This pattern of decreasing streamflows over northern Patagonia and decreasing streamflows in the Santa Cruz river has been reported previously \cite{pasquini2011southern, rivera2018spatio}. Pasquini \& Depetris (\cite{pasquini2007discharge}) reported negative trends in the Río Negro river (which includes Limay and Neuquén basins) during summer months. This agrees with our results. The same authors reported a significant positive trend in the Santa Cruz river during the southern spring, while Lauro et al. (\cite{lauro2019streamflow}) observed an increasing trend in winter flows. Streamflow reductions over northern Patagonia seem to mainly respond to precipitation declines which are associated to the observed trend towards a positive phase of the AAO during summer and fall \cite{ aravena2009spatio, rivera2018spatio, fogt2020southern} and also to low-frequency variations in other ocean-rooted oscillations such as the PDO \cite{lauro2019streamflow}. According to Boisier et al. \cite{boisier2018anthropogenic} and \cite{villamayor2021causes}, long-term variations in the polarity of the AAO are attributable to both stratospheric ozone depletion and increased atmospheric greenhouse gases. Garreaud el al. \cite{garreaud2021south} posit an additional mechanism to explain recent droughts and decreasing rainfall trends over central Chile/northwestern Patagonia. According to this research, a recent oceanic warming over the subtropical southwest Pacific (the area of the SB index) has contributed to a sea level pressure rise (and a consequent drying) between 30\degree S and 40\degree S from New Zealand to Chile. The observed positive trend in the streamflows of the Santa Cruz river seem to respond to an overall temperature rise over southern Patagonia \cite{barros2015cambio, masiokas2015inventory,olivares2019warming}. The impacts of rainfall variations are much less clear, on the other hand. Regional precipitation trends seem to be spatially inhomogeneous: Garreaud et al. (\cite{garreaud2013large}) reported positive precipitation trends over the southern patagonian Andes for the period 1968-2001 based on reanalysis and modeled data; but Gonzales-Reyes et al. (2017, \cite{gonzalez2017variabilidad}) reported a negative trend during 1900-2014 based on observational data.
+
+\section{Conclusion}
+
+In this study we assessed the joint variability and climatic drivers of wind, solar and reservoir hydro resources over interannual to interdecadal timescales over Argentina. We found low complementarity between solar and wind resources, and between wind speeds at most wind groups and the streamflows of the Santa Cruz river the interannual timeframe. The climatic drivers operating at interannual timescales are diverse and produce different impacts on wind, solar and hydro resources. The AAO drive variations in wind speeds over central Argentina, streamflows over northern Patagonia (negative correlations for both resources), and streamflows over southern Patagonia (positive correlations). ENSO is positively related to streamflows over northern Patagonia but negatively to radiation over northwestern Argentina. Regarding long-term variations, wind speeds show different trends according to the location of the sites: negative trends over north-western Patagonia and northern Argentina, but positive over eastern Patagonia. Observed trends in streamflows were negative over northern Patagonian basins and positive over the Santa Cruz river. Finally, the solar resource showed positive trends, mainly during winter and spring. Our results suggest that the physical mechanisms behind these long term variations are likely explained by combinations of various climatic patterns; although this will require further research. Wind speed variations might respond to variations in the AAO or ocean-rooted climate indices, depending on the location. Solar radiation variations are probably linked to purely ocean-rooted climate indices instead. There is less uncertainty about the role of the AAO in explaining variations in streamflows over northern and southern Patagonia, although other other phenomena might have relevance such as global warming and long term variations in SSTs over the tropical Pacific. 
+
+%\backmatter
+%\bmsection*{Author contributions}
+
+%This is an author contribution text. This is an author contribution text. This is an author contribution text. This is an author contribution text. This is an author contribution text.
+
+\bmsection*{Acknowledgments}
+This work has been entirely supported by the Universidad Nacional de Río Negro and by the Agencia Nacional de Promoción Científica y Tecnológica. 
+
+
+\bmsection*{Conflict of interest}
+
+The authors declare no potential conflict of interests.
+
+\bmsection*{Data availability statement}
+
+Data sharing not applicable to this article as no datasets were generated during the current study.
+
+\bibliography{wileyNJD-AMA}
+
+\end{linenumbers}
+
+\bmsection*{Supporting information}
+
+Additional supporting information may be found in the
+online version of the article at the publisher’s website.
+
+
+
+
+%\nocite{*}% Show all bib entries - both cited and uncited; comment this line to view only cited bib entries;
+
+
+
+
+\end{document}
